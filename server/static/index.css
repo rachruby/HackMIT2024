@@ -91,7 +91,7 @@ button {
 
 .user-info {
     margin-top: 45px;
-    margin-right: 160px;
+    margin-right: 230px;
 }
 
 /* Memory cards styled to appear horizontally */
@@ -124,11 +124,14 @@ button {
 .card p {
     font-size: 1.2em;
     margin: 5px 0;
+    font-family: Rubik, sans-serif;
+    font-weight: bold;
 }
 
 .card span {
     font-size: 0.9em;
     color: black;
+    font-family: Rubik, sans-serif;
 }
 
 /* Upload & Chat Icons */

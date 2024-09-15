@@ -18,30 +18,31 @@ def create_database():
     with engine.connect() as conn:
         with conn.begin():# Load 
             sql = f"""
-                    CREATE TABLE UserReviews7 (
+                    CREATE TABLE UserReviews (
         id INT PRIMARY KEY AUTO_INCREMENT,
         description TEXT,
         video TEXT,
+        detail TEXT,
         description_vector VECTOR(DOUBLE, 384)
     )
                     """
             result = conn.execute(text(sql))
 
-def insert_data(video_path, description):
+def insert_data(video_path, description, detail_path):
     # video_path = "../data/test.mov"
     # description = "a video taken at hackMIT for fun"
     single_embedding =model.encode(description, normalize_embeddings=True).tolist()
-    print(single_embedding)
+    # print(single_embedding)
     with engine.connect() as conn:
         with conn.begin():# Load 
             sql = """
-                    INSERT INTO UserReviews7
-                    (description, video,  description_vector)
-                    VALUES (:description, :video, TO_VECTOR(:description_vector))
+                    INSERT INTO UserReviews
+                    (description, video, detail, description_vector)
+                    VALUES (:description, :video, :detail, TO_VECTOR(:description_vector))
                 """
             conn.execute(
                 text(sql),
-                {"description": description, "video": video_path, "description_vector": str(single_embedding)}
+                {"description": description, "video": video_path, "detail": detail_path, "description_vector": str(single_embedding)}
             )
             print("Row inserted successfully.")
 
@@ -52,7 +53,7 @@ def vector_search(description_search):
     with engine.connect() as conn:
         with conn.begin():
             sql = text("""
-                SELECT TOP 1 * FROM UserReviews7
+                SELECT TOP 1 * FROM UserReviews
                 ORDER BY VECTOR_DOT_PRODUCT(description_vector, TO_VECTOR(:search_vector)) DESC
             """)
 

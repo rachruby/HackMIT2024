@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="public/favicon.png">
-    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="/static/public/favicon.png">
+    <link rel="stylesheet" href="/static/index.css">
     <script type="importmap">
             {
               "imports": {
@@ -28,7 +28,7 @@
 <body>
 
     <div class="logo-front">
-        <img src="rewind_logo.png" alt="Rewind Logo">
+        <img src="/static/public/rewind_logo.png" alt="Rewind Logo">
     </div>
 
     <div class="container-row">
@@ -37,10 +37,10 @@
 
             <div class="header">
 
-                <img src="/timothy.jpg" alt="Profile Picture" class="profile-img">
+                <img src="/static/public/timothy.jpg" alt="Profile Picture" class="profile-img">
                 <div class="user-info">
 
-                    <h1>Timothy Beaver</h1> <!-- Dynamic content based on the person -->
+                    <h1>{{name}}</h1> <!-- Dynamic content based on the person -->
                     <p>Where memories live forever, one moment at a time</p>
 
                 </div>
@@ -59,7 +59,7 @@
                 <div class="card">
                     <a href="/redplant.html">
                         <button>
-                            <img src="redplant.png" alt="Memory 1">
+                            <img src="/static/public/redplant.png" alt="Memory 1">
                         </button>
                     </a>
                     <p>Redbull next to Plants</p>
@@ -69,7 +69,7 @@
                 <div class="card">
                     <a href="/redplant.html">
                         <button>
-                            <img src="/redplant.png" alt="Memory 1">
+                            <img src="/static/public/redplant.png" alt="Memory 1">
                         </button>
                     </a>
                     <p>Redbull next to Plants</p>
@@ -79,7 +79,7 @@
                 <div class="card">
                     <a href="/redplant.html">
                         <button>
-                            <img src="/redplant.png" alt="Memory 1">
+                            <img src="/static/public/redplant.png" alt="Memory 1">
                         </button>
                     </a>
                     <p>Redbull next to Plants</p>
@@ -93,11 +93,11 @@
         <div class="icons">
 
             <button class="upload-btn">
-                <img src="cloudupload.png" alt="Upload">
+                <img src="/static/public/cloudupload.png" alt="Upload">
             </button>
 
             <button class="chat-btn">
-                <img src="chat.png" alt="Chat">
+                <img src="/static/public/chat.png" alt="Chat">
             </button>
 
         </div>
